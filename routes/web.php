@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\http\Controllers\MainController; //Importing main controller class
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Login route
+Route::get('/auth/login',[MainController::class, 'login'])->name('auth.login');
+Route::get('/auth/register',[MainController::class, 'register'])->name('auth.register');
+Route::get('/auth/verify',[MainController::class, 'register'])->name('auth.verify');
+
 
 Auth::routes();
 
