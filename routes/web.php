@@ -17,7 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('todos','TodosController@index');
+Route::get('index', function () {
+    return view('index');
+});
+
+//Route::get('todos','TodosController@index');
 
 Auth::routes();
 
