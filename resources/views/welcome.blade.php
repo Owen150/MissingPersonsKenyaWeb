@@ -34,7 +34,12 @@
                         @endif
                     @endauth
                 </div>
+                <div class = content>
+                    <a href ="/index">Todos</a>
+                </div>
             @endif
         </div>
+        
+
     </body>
 </html>
