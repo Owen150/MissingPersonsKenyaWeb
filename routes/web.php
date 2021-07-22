@@ -17,11 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Login route
-Route::get('/auth/login',[MainController::class, 'login'])->name('auth.login');
-Route::get('/auth/register',[MainController::class, 'register'])->name('auth.register');
-Route::get('/auth/verify',[MainController::class, 'register'])->name('auth.verify');
-
+Route::get('todos','TodosController@index');
 
 Auth::routes();
 
