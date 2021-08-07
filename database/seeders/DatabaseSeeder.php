@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(TodosSeeder::class);
+        $this->call(TodosSeeder::class);
         DB::table('todos_table')->insert([
             'name' => Str::random(10),
             'description' => Str::random(10).'@gmail.com',

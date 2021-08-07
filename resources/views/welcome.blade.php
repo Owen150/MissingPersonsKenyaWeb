@@ -35,7 +35,7 @@
                     @endauth
                 </div>
                 <div class = content>
-                    <a href ="/index">Todos</a>
+                    <a href ="/todos">Todos</a>
                 </div>
             @endif
         </div>

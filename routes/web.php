@@ -21,7 +21,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-//Route::get('index','TodosController@index');
+Route::get('/todos','TodosController@index');
 
 Auth::routes();
 
