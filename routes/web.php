@@ -21,8 +21,9 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/todos','TodosController@index');
-
+Route::get('/todos',[App\Http\Controllers\TodosController::class, 'index']);
+Route::get('/report',[App\Http\Controllers\ReportController::class, 'index']);
+Route::get('/report',[App\Http\Controllers\ReportController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
