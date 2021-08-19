@@ -8,11 +8,9 @@
 </head>
 <body>
     <h1>LANDING PAGE</h1>
-    public function socials_view(){
-        $user = Auth::user();
-        $socials = SocialLinks::where('user_id',$user->id)->age();
-
-        return view('users.socials',['socials'=>$socials])->withUser($user);
-    }
+    @foreach($crs as $cr)
+        <p>{{ $cr->name_of_missing_person }}</p>
+       
+    @endforeach
 </body>
 </html>

@@ -13,21 +13,19 @@ use App\http\Controllers\MainController; //Importing main controller class
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[App\Http\Controllers\ReportController::class, 'index'])->name('welcome');
 
 Route::get('/index', function () {
     return view('index');
 });
 
 Route::get('/todos',[App\Http\Controllers\TodosController::class, 'index']);
-Route::get('/report',[App\Http\Controllers\ReportController::class, 'index']);
-Route::get('/report',[App\Http\Controllers\ReportController::class, 'index']);
+Route::get('/report',[App\Http\Controllers\ReportController::class, 'create'])->name('reports.create');
+Route::post('/report',[App\Http\Controllers\ReportController::class, 'store'])->name('reports.store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

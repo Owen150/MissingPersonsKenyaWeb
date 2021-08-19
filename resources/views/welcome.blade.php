@@ -33,13 +33,24 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
                     @endauth
+
                 </div>
-                <div class = content>
-                    <a href ="/todos">Todos</a>
+
+                    
+                <div>
+                    @foreach($crs as $cr)
+                        <p>{{ $cr->name_of_missing_person }}</p></br>
+                        <p>{{ $cr->phone_number }}</p></br>
+                        <p>{{ $cr->your_name }}</p></br>
+                        <p>{{ $cr->email}}</p></br>
+                        <p>{{ $cr->age}}</p></br>
+                        <p>{{ $cr->additional_info }}</p></br>
+                    @endforeach
                 </div>
             @endif
         </div>
         
-
+        
+        
     </body>
 </html>

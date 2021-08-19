@@ -11,10 +11,12 @@ class ReportController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public function index()
     {
-        return view('todos.report');
+        $crs = Cr::all();
+        return view('welcome')->with('crs', $crs);
     }
 
     /**
@@ -24,7 +26,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('todos.report');
     }
 
     /**
@@ -35,7 +37,27 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_of_missing_person' => 'required',
+            'phone_number' => 'required',
+            'your_name' => 'required',
+            'email' => 'required',
+            'age'=>'required',
+            'additional_info'=>'required'
+        ]);
+
+        $report = new cr;
+
+        $report->name_of_missing_person = $request->name_of_missing_person;
+        $report->phone_number = $request->phone_number;
+        $report->your_name = $request->your_name;
+        $report->email = $request->email;
+        $report->age = $request->age;
+        $report->additional_info = $request->additional_info;
+
+        $report->save();
+
+        return view('welcome');
     }
 
     /**

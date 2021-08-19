@@ -13,16 +13,16 @@ class CreateReportTable extends Migration
      */
     public function up()
     {
-        Schema::create('report', function (Blueprint $table) {
+        Schema::create('crs', function (Blueprint $table) {
             $table->id();
-            $table->string('name-of-missing-person');
-            $table->string('phone-number');
-            $table->string('your-name');
+            $table->string('name_of_missing_person');
+            $table->string('phone_number');
+            $table->string('your_name');
             $table->string('email');
             $table->string('age');
-            $table->string('additional-info');
-            $table->string('image-url');
-            $table->date('date-when-child-went-missing');
+            $table->string('additional_info');
+            $table->string('image_url')->nullable();
+            $table->date('date_when_child_went_missing')->nullable();
             $table->timestamps();
         });
     }
