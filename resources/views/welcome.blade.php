@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex items-top justify-center min-h-screen  sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -35,17 +35,40 @@
                     @endauth
 
                 </div>
-
                     
                 <div>
-                    @foreach($crs as $cr)
-                        <p>{{ $cr->name_of_missing_person }}</p></br>
-                        <p>{{ $cr->phone_number }}</p></br>
-                        <p>{{ $cr->your_name }}</p></br>
-                        <p>{{ $cr->email}}</p></br>
-                        <p>{{ $cr->age}}</p></br>
-                        <p>{{ $cr->additional_info }}</p></br>
-                    @endforeach
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name of missing person</th>
+                            <th scope="col">Phone number</th>
+                            <th scope="col">Reporters Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Additional information</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($crs as $cr)
+
+                            <tr>
+                            <th scope="row">1</th>
+                            <td>{{ $cr->name_of_missing_person }}</td>
+                            <td>{{ $cr->phone_number }}</td>
+                            <td>{{ $cr->your_name }}</td>
+                            <td>{{ $cr->email}}</td>
+                            <td>{{ $cr->age}}</td>
+                            <td>{{ $cr->additional_info }}</td>
+                            </tr>     
+                            @endforeach                  
+                        </tbody>
+
+                    </table>
+                    
+                    
+                    </table>   
                 </div>
             @endif
         </div>
