@@ -46,7 +46,7 @@ class ReportController extends Controller
             'additional_info'=>'required'
         ]);
 
-        $report = new cr;
+        $report = new cr();
 
         $report->name_of_missing_person = $request->name_of_missing_person;
         $report->phone_number = $request->phone_number;
@@ -57,7 +57,9 @@ class ReportController extends Controller
 
         $report->save();
 
-        return view('welcome');
+        $crs = Cr::all();
+
+        return view('welcome')->with('crs', $crs);
     }
 
     /**

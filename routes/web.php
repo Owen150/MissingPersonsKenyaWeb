@@ -22,6 +22,10 @@ Route::get('/index', function () {
 Route::get('/todos',[App\Http\Controllers\TodosController::class, 'index']);
 Route::get('/report',[App\Http\Controllers\ReportController::class, 'create'])->name('reports.create');
 Route::post('/report',[App\Http\Controllers\ReportController::class, 'store'])->name('reports.store');
+Route::get('/about',[App\Http\Controllers\aboutcontroller::class, 'index'])->name('about');
+Route::get('/contact',[App\Http\Controllers\contactcontroller::class, 'index'])->name('contact');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
