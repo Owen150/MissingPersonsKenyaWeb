@@ -26,7 +26,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        return view('todos.report');
+        //
     }
 
     /**

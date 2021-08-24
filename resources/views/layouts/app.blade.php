@@ -21,28 +21,33 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Missing Persons Kenya') }}
+                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                    <div><img src="/jpg/Logo.jpg" style="height:30px; border-right:1px solid #333;" class="pr-3"></div>
+                    <div class="pl-3 pt-1">Missing Persons Kenya</div>
                 </a>
                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('welcome')}}">Home</a>
+                <!-- Left Side Of Navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">                    
+                    <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('home')}}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">About</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('contact')}}">Lost & Found Persons</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('about')}}">Blog</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{route('contact')}}">Report Missing Person</a>
+                    </li>
+                    
                     </ul>
 
                     <!-- Right Side Of Navbar -->

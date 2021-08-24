@@ -1,9 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container">
+    <div class = "row">
+        <div class = "col-3 p-1">
+            <img src="https://i0.wp.com/missingchild.co.ke/wp-content/uploads/2017/11/BUTTON-1.png?w=800&ssl=1" class="rounded-circle">
+        </div>
+        <div class = "col-9">
+
+        </div>
+    </div>
+</div>
+
 <div class="container">
         
-<div>
+                <div>
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -18,7 +30,6 @@
                         </thead>
                         <tbody>
                             @foreach($crs as $cr)
-
                             <tr>
                             <td>{{ $cr->name_of_missing_person }}</td>
                             <td>{{ $cr->phone_number }}</td>
@@ -29,13 +40,9 @@
                             </tr>     
                             @endforeach                  
                         </tbody>
-
-                    </table>
                     
                     
-                    </table>   
+                    </table>               
                 </div>
-            
-        </div>
 </div>
 @endsection

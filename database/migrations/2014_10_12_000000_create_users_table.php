@@ -21,11 +21,9 @@ class CreateUsersTable extends Migration
             $table->text('about')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('profile_id');
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 
