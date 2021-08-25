@@ -15,7 +15,7 @@
 
 <div class="container">
         
-                <div>
+                <!-- <div>
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -43,6 +43,6 @@
                     
                     
                     </table>               
-                </div>
+                </div> -->
 </div>
 @endsection
