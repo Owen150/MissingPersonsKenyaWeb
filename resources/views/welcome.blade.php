@@ -1,48 +1,41 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-@section('content')
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url('./css/index.css') }}" />
+        <title>missingPersonsApp</title>
+    </head>
 
-<div class="container">
-    <div class = "row">
-        <div class = "col-3 p-1">
-            <img src="https://i0.wp.com/missingchild.co.ke/wp-content/uploads/2017/11/BUTTON-1.png?w=800&ssl=1" class="rounded-circle">
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+            <div class="contentWrapper">
+                <div class="content">
+                    <p class="">Missing Persons Kenya helps you:</br>+ View missing persons reports<br/>+ Report missing persons
+                        </br>+ Report sightings of missing persons<br/><br/>
+                        <span class="callToAction">Need help finding a loved one?</span>
+                    </p>
+                    <a href="{{ route('login') }}"><button class="loginBtn">LOGIN</button></a>
+                </div>
+            </div>
+           
         </div>
-        <div class = "col-9">
-
-        </div>
-    </div>
-</div>
-
-<div class="container">
         
-                <!-- <div>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                            <th scope="col">Name of missing person</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Reporters Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Additional information</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($crs as $cr)
-                            <tr>
-                            <td>{{ $cr->name_of_missing_person }}</td>
-                            <td>{{ $cr->phone_number }}</td>
-                            <td>{{ $cr->your_name }}</td>
-                            <td>{{ $cr->email}}</td>
-                            <td>{{ $cr->age}}</td>
-                            <td>{{ $cr->additional_info }}</td>
-                            </tr>     
-                            @endforeach                  
-                        </tbody>
-                    
-                    
-                    </table>               
-                </div> -->
-</div>
-@endsection
+    </body>
+</html>
