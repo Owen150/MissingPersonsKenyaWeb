@@ -1,0 +1,78 @@
+body {
+    background-image: url(../images/indexBg.jpeg);
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.contentWrapper{
+    background-color:#FF5C3E;
+    height: 400px;
+    width:600px;
+    opacity: 0.8;
+}
+
+.content {
+    height: 400px;
+    width:600px;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    
+}
+.callToAction{
+    font-weight: 900;
+}
+.content p{
+    margin-top: 5%;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #FF5C3E;
+    padding: 0 25px;
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+.loginBtn{
+    background-color: black;
+    color: #FF5C3E;
+    border-radius: 12px;
+    height: 40px;
+    width: 100px;
+    font-weight: 900;
+}
+.loginBtn:hover{
+    background-color: black;
+    color: #FFD36E;
+}
