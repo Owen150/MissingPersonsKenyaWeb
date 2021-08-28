@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
     ];
 
@@ -44,6 +45,18 @@ class User extends Authenticatable
 
     public function profile()
     {
-        $this->hasOne('App\Profile');
+        return $this->hasOne(Profile::class);
+    }
+
+    //One to many thus post-s
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    //One to many thus report-s
+    public function crs()
+    {
+        return $this->hasMany(Cr::class);
     }
 }

@@ -21,7 +21,7 @@ class CreateReportTable extends Migration
             $table->string('email');
             $table->string('age');
             $table->string('additional_info');
-            $table->string('image_url')->nullable();
+            $table->string('image_url');
             $table->date('date_when_child_went_missing')->nullable();
             $table->timestamps();
         });

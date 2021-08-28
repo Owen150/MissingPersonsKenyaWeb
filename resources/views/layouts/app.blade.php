@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/jpg/Logo.jpg" style="height:30px; border-right:1px solid #333;" class="pr-3"></div>
@@ -36,16 +36,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">                    
                     <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('home')}}">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('contact')}}">Lost & Found Persons</a>
+                        <a class="nav-link" href="{{route('missing')}}">Lost & Found Persons</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('about')}}">Blog</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('contact')}}">Report Missing Person</a>
+                        <a class="nav-link" href="{{route('reports.create')}}">Report Missing Person</a>
                     </li>
                     
                     </ul>
@@ -68,7 +68,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->username }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

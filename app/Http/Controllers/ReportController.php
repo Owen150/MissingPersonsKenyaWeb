@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
+    //Only authenticated users can post-error kidogo
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +31,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.report');
     }
 
     /**
@@ -43,7 +48,8 @@ class ReportController extends Controller
             'your_name' => 'required',
             'email' => 'required',
             'age'=>'required',
-            'additional_info'=>'required'
+            'additional_info'=>'required',
+            'image_url'=>['required','image'],
         ]);
 
         $report = new cr();
@@ -54,12 +60,14 @@ class ReportController extends Controller
         $report->email = $request->email;
         $report->age = $request->age;
         $report->additional_info = $request->additional_info;
+        $report->image_url = $request->image_url->store('uploads','public');
 
         $report->save();
 
         $crs = Cr::all();
 
-        return view('welcome')->with('crs', $crs);
+        //returns authenticated user back to his/her user profile
+        return redirect('/missing')->with('crs', $crs);
     }
 
     /**
