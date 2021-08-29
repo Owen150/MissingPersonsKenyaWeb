@@ -40,18 +40,6 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('missing')}}">Lost & Found Persons</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('about')}}">Blog</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('reports.create')}}">Report Missing Person</a>
-                    </li>
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
@@ -66,6 +54,18 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('missing')}}">Missing Persons </a>
+                        </li>
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="{{route('about')}}">Blog</a>
+                        </li> -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('reports.create')}}">Report Missing Person</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->username }}
