@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\cr;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
+
+
 
 class ReportController extends Controller
 {
-    //Only authenticated users can post-error kidogo
+    /**Only authenticated users can post-error kidogo
     public function __construct()
     {
         $this->middleware('auth');
     }
+    */
+
+    
     /**
      * Display a listing of the resource.
      *

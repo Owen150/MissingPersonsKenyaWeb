@@ -28,6 +28,15 @@ Route::get('/missing',[App\Http\Controllers\missingcontroller::class, 'index'])-
 
 
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
+Route::get('/profile/{user}/create', [App\Http\Controllers\ProfilesController::class, 'create'])->name('profile.create');
+Route::post('/profile/store', [App\Http\Controllers\ProfilesController::class, 'store'])->name('profile.store');
+
+Route::get('/profile/{user}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');
+
+Route::patch('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'update'])->name('profile.update');
+
+
+
 Route::post('/report',[App\Http\Controllers\ReportController::class, 'store'])->name('reports.store');
 Route::get('/report',[App\Http\Controllers\ReportController::class, 'create'])->name('reports.create');
 

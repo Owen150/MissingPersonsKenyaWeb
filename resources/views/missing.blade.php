@@ -17,34 +17,27 @@
   
     <body>
         <div class="container">       
-            <div>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">Name of missing person</th>
-                        <th scope="col">Phone number</th>
-                        <th scope="col">Reporters Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Additional information</th>
-                        <th scope="col">Missing person image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($crs as $cr)
-                        <tr>
-                        <td>{{ $cr->name_of_missing_person }}</td>
-                        <td>{{ $cr->phone_number }}</td>
-                        <td>{{ $cr->your_name }}</td>
-                        <td>{{ $cr->email}}</td>
-                        <td>{{ $cr->age}}</td>
-                        <td>{{ $cr->additional_info }}</td>
-                        <td><img src="/storage/{{ $cr->image_url}}" alt=""></td>
-                        </tr>     
-                        @endforeach                            
-                    </tbody>                    
-                </table>               
+            
+            <div class="d-inline-flex">
+                @foreach($crs as $cr)
+                <div class="card" style="width: 18rem;">
+                    <img src="/storage/{{ $cr->image_url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $cr->name_of_missing_person }}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ $cr->age}}</li>
+                        <li class="list-group-item">{{ $cr->additional_info }}</li>
+                        <li class="list-group-item">{{ $cr->your_name }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                @endforeach             
             </div>
+            
         </div>
     </body>
 </html>

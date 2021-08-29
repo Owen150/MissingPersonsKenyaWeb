@@ -78,6 +78,19 @@
                                         {{ __('Logout') }}
                                     </a>
 
+
+                                    <a class="dropdown-item" href="{{ url('/profile/'. Auth()->user()->id . '/create') }}">
+                                       Create profile
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ url('/profile/'. Auth()->user()->id . '/edit') }}">
+                                       Edit profile
+                                    </a>
+
+                                    <a class="dropdown-item" href="">
+                                       Update missing person information
+                                    </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

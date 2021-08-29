@@ -9,16 +9,18 @@
         <div class = "col-10 pt-4">
             <div><h1>{{ $user->username}}</h1></div>
             <div class = "d-flex justify-content-center">
-                <div class = "pr-5"><strong>153 </strong>Posts</div>
-                <div class = "pr-5"><strong>33k </strong>Followers</div>
-                <div class = "pr-5"><strong>212 </strong>Following</div>
+                <div class = "pr-5"><strong>{{ $user->posts->count() }}</strong> Posts</div>
+                <div class = "pr-5"><strong>212 </strong>{{ $profile->name }}</div>
+                <div class = "pr-5"><strong>212 </strong>{{ $profile->location }}</div>
+                <div class = "pr-5"><strong>212 </strong>{{ $profile->phone_number }}</div>
+                <div class = "pr-5"><strong>212 </strong>{{ $profile->description }}</div>
             </div>
         </div>
     </div>
     <div class = "row pt-5">
         
         @foreach($user->posts as $post)
-        <div class = "col-6 offset-3">
+        <div class = "col-6 offset-3 pb-4">
             <img src ="/storage/{{$post->image}}" class = "w-100">
         </div>
         @endforeach
