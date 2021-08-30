@@ -24,8 +24,9 @@ Route::get('/index', function () {
 Route::get('/about',[App\Http\Controllers\aboutcontroller::class, 'index'])->name('about');
 Route::get('/missing',[App\Http\Controllers\missingcontroller::class, 'index'])->name('missing');
 
-
-
+Route::get('/dashboard', function(){
+    return view('admin.dashboard');
+});
 
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 Route::get('/profile/{user}/create', [App\Http\Controllers\ProfilesController::class, 'create'])->name('profile.create');
