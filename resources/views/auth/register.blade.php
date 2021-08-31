@@ -74,6 +74,13 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="avi" class="col-md-4 col-form-label text-md-right">{{ __('Profile picture') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="avi" type="file" class="form-control" name="avi">
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
