@@ -12,7 +12,7 @@ use App\http\Controllers\MainController; //Importing main controller class
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 
 Route::get('/',[App\Http\Controllers\ReportController::class, 'index'])->name('welcome');
